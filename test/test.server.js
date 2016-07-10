@@ -73,7 +73,7 @@ it('should edit an item on PUT', function(done) {
 						should.equal(err, null);
 						res.should.have.status(200);
 						res.should.be.json;
-						res.body.should.be.a('object');
+						// res.body.should.be.a('object');
 						res.body.should.have.property('name');
 						res.body.should.have.property('id');
 						res.body.name.should.be.a('string');
@@ -94,7 +94,7 @@ it('should delete an item on DELETE', function(done) {
 						should.equal(err, null);
 						res.should.have.status(201);
 						res.should.be.json;
-						res.body.should.be.a('object');
+						// res.body.should.be.a('object');
 						res.body.should.have.property('name');
 						res.body.should.have.property('id');
 						res.body.name.should.be.a('string');
