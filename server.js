@@ -72,15 +72,15 @@ app.delete('/items/:id', function(req, res) {
 });
 
 app.put('/items/:id', function(req, res) {
-  var id = req.body.id;
-  var newItem = req.body.name;
-  Item.findByIdAndUpdate(id, {name : newItem }, function(err) {
+  var id = req.params.id;
+  var newName = req.body.name;
+  Item.findByIdAndUpdate(id, {name : newName }, function(err, data) {
     if (err) {
       return res.status(500).json({
           message: 'Internal Server Error'
       });
     }
-    res.status(200).json(id);
+    res.status(200).json({_id:id, name: newName});
   });
 });
 
