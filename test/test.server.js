@@ -68,28 +68,25 @@ describe('Shopping List', function() {
     });
     // Test PUT
     it('should edit an item on PUT', function(done) {
-			chai.request(app)
-				.get('/items')
-				.end(function(err, res) {
-        	chai.request(app)
-            .put('/items'+res.body[0]._id)
-            .send({
-                'name': 'Cheese'
-            })
-            .end(function(err, res) {
-                should.equal(err, null);
-                res.should.have.status(200);
-                res.should.be.json;
-                res.body.should.be.a('object');
-                res.body.should.have.property('name');
-                res.body.should.have.property('id');
-                res.body.name.should.be.a('string');
-                res.body.id.should.be.a('number');
-                res.body.name.should.equal('Cheese');
-                res.body.id.should.equal(0);
-                done();
-            });
-					});
+    		chai.request(app)
+    				.put('/items/1')
+    				.send({
+    						'name': 'Cheese'
+    				})
+    				.end(function(err, res) {
+                console.log(res._headers);
+    						should.equal(err, null);
+    						res.should.have.status(200);
+    						res.should.be.json;
+    						res.body.should.be.a('object');
+    						res.body.should.have.property('name');
+    						res.body.should.have.property('id');
+    						res.body.name.should.be.a('string');
+    						res.body.id.should.be.a('number');
+    						res.body.name.should.equal('Cheese');
+    						res.body.id.should.equal(0);
+    						done();
+    				});
     });
     // Test DELETE
     it('should delete an item on DELETE', function(done) {
