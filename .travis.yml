@@ -8,3 +8,10 @@ addons:
     - mongodb-3.2-precise
     packages:
     - mongodb-org-server
+deploy:
+  provider: heroku
+  api_key:
+    secure: O3EpKI9xtZTCH18zO098dQq638DGfIR1rZFUW3xJZ9kkMTq7g8WCyD16sJbqLjxHE3nQCe0o10PgZOQcNLuaXDh7wFr2kgTOfy5dKRmCpSEPstTZ8C9rylfmK4pAs/68IMZnqhxMNRhFX520ae26eIVrKN2GX+sYsJetVRqToJvQB5f7I8AZBms30tgb9NKX3iczS2IEQzGex2YwtA/DPXwjFF/Bd0BJCiWBfwWK0qWmlZP5HxQ+5jOOp70Dzhkslnq0k+3cNmJ4V7aZ8CROrm1zTpg2iURfDcV0pyPN39pSYmAdQzQfwooK7P1oN6h+zt2LvXlwkdj+1LJMzjAdL6FAdLm8t3+VZkpVrtWAWnRwN1jVvRlxuMvz0uEl6X8KfKQYrZXYZ+To5CZpIcTZrZIk2M2VB4WcHqEo7HR+Gd5bztPkmQBbMkLg9gBfWMiLwoG+8s9oVglVAQCX3+4ZWwcA1oCCCa2kAsOfUSy/fC8gvcX4//FdMObHpxT8Di3vov2IgrIuVvoDk6arOci6yukjiuAHCIS5B05d3WIynFBeZttX2CgRUA3GRsdocp7YJ5QjgtZ/KQW16vH9c7DU7cnnl6UexlwrkiXQeLjbTIQ7GS7eAy9CGAzj70GHH75WRxFUvHmvKhtO018LILvdoTw/M08KQ+KyHKw+4aPLTt8=
+  app: quiet-ravine-64374
+  on:
+    repo: cbilliau/mongo-shopping-list
